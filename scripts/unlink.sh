@@ -3,12 +3,9 @@
 script_dir=$(cd $(dirname $0); pwd)
 dotfiles_dir=$(dirname $script_dir)
 
-for f in $(ls $dotfiles_dir -A -I 'scripts' -I 'install.sh' -I '.git' -I 'README.md')
+for f in $($script_dir/list.sh)
 do
-  if [ -f $HOME/$f ]
-  then
-    echo $HOME/$f
-    rm $HOME/$f
-  fi
+  echo rm -rf $HOME/$f
+  rm -rf $HOME/$f
 done
 
