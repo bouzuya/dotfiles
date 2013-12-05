@@ -15,7 +15,8 @@ then
   exit 1
 fi
 
-git clone git://github.com/bouzuya/dotfiles.git "$dotfiles_dir"
+git clone --recursive git@github.com:bouzuya/dotfiles.git "$dotfiles_dir"
+
 cd "$dotfiles_dir"
 chmod +x ./scripts/*.sh
 ./scripts/link.sh
