@@ -20,5 +20,6 @@ nnoremap <Space>w :<C-u>write<C-m>
 nnoremap <Space>q :<C-u>quit<C-m>
 nnoremap <Space>e :<C-u>vsplit .<C-m>
 nnoremap <Space>E :<C-u>vsplit %:p:h<C-m>
+nnoremap <Space>op :<C-u>setlocal paste!<C-m>:setlocal paste?<C-m>
 nnoremap <Space>ow :<C-u>setlocal wrap!<C-m>:setlocal wrap?<C-m>
 
