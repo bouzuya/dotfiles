@@ -1,11 +1,14 @@
 set nocompatible
 
-let s:backupdir = expand('~/.vim/backupdir')
-if !isdirectory(s:backupdir)
-  call mkdir(s:backupdir, 'p')
-end
-execute 'set backupdir=' . s:backupdir
-unlet! s:backupdir
+function! s:mkdir_if_not_exists(dir)
+  let dir = expand(a:dir)
+  if !isdirectory(dir)
+    call mkdir(dir, 'p')
+  end
+  return dir
+endfunction
+
+execute 'set backupdir=' . s:mkdir_if_not_exists('~/.vim/backupdir')
 
 set laststatus=2
 set hlsearch
