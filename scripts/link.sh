@@ -9,6 +9,7 @@ do
   then
     echo $HOME/$f already exists.
   else
+    echo ln -s $dotfiles_dir/$f $HOME/$f
     ln -s $dotfiles_dir/$f $HOME/$f
   fi
 done
