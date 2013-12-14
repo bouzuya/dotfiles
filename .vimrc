@@ -1,4 +1,7 @@
-set nocompatible
+if has('vim_starting')
+  set nocompatible
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
 
 function! s:mkdir_if_not_exists(dir)
   let dir = expand(a:dir)
@@ -7,6 +10,13 @@ function! s:mkdir_if_not_exists(dir)
   end
   return dir
 endfunction
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+NeoBundle 'bouzuya/vim-diary'
+
+filetype plugin indent on
 
 execute 'set backupdir=' . s:mkdir_if_not_exists('~/.vim/backupdir')
 
