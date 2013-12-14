@@ -20,11 +20,16 @@ filetype plugin indent on
 
 execute 'set backupdir=' . s:mkdir_if_not_exists('~/.vim/backupdir')
 
+set fileformat=unix
+set fileencoding=utf-8
 set laststatus=2
 set hlsearch
 set nowrapscan
 set ignorecase
 set smartcase
+set shiftwidth=2
+set expandtab
+set listchars=eol:$,tab:>-
 
 nnoremap <Space>w :<C-u>write<C-m>
 nnoremap <Space>q :<C-u>quit<C-m>
