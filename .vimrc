@@ -19,6 +19,7 @@ NeoBundle 'bouzuya/vim-diary'
 filetype plugin indent on
 
 execute 'set backupdir=' . s:mkdir_if_not_exists('~/.vim/backupdir')
+execute 'set directory=' . s:mkdir_if_not_exists('~/.vim/directory')
 
 set fileformat=unix
 set fileencoding=utf-8
