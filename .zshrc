@@ -123,6 +123,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 # エイリアス
 
 alias c='cd'
+alias g='git'
 alias l='ls --color'
 
 alias ls='ls --color'
