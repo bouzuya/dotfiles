@@ -31,6 +31,7 @@ set smartcase
 set shiftwidth=2
 set expandtab
 set listchars=eol:$,tab:>-
+set colorcolumn=80
 
 nnoremap <Space>w :<C-u>write<C-m>
 nnoremap <Space>q :<C-u>quit<C-m>
