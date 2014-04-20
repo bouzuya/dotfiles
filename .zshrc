@@ -1,9 +1,6 @@
-# 少し凝った zshrc
-
 ########################################
 # 環境変数
 export LANG=ja_JP.UTF-8
-
 
 # 色を使用出来るようにする
 autoload -Uz colors
@@ -18,16 +15,13 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 
 # プロンプト
-# 1行表示
-# PROMPT="%~ %# "
-# 2行表示
 PROMPT="%{${fg[red]}%}[%n@%m]%{${reset_color}%} %~
 %# "
-
 
 # 単語の区切り文字を指定する
 autoload -Uz select-word-style
 select-word-style default
+
 # ここで指定した文字は単語区切りとみなされる
 # / も区切りと扱うので、^W でディレクトリ１つ分を削除できる
 zstyle ':zle:*' word-chars " /=;@:{},|"
@@ -68,7 +62,6 @@ precmd () {
 }
 RPROMPT="%1(v|%F{green}%1v%f|)"
 
-
 ########################################
 # オプション
 # 日本語ファイル名を表示可能にする
@@ -88,6 +81,7 @@ setopt auto_cd
 
 # cd したら自動的にpushdする
 setopt auto_pushd
+
 # 重複したディレクトリを追加しない
 setopt pushd_ignore_dups
 
@@ -128,16 +122,13 @@ alias c='cd'
 alias g='git'
 alias l='ls --color'
 alias v='vi'
-
 alias be='bundle exec'
-alias ls='ls --color'
+alias cp='cp -i'
 alias la='ls -a --color'
 alias ll='ls -l --color'
-
-alias rm='rm -i'
-alias cp='cp -i'
+alias ls='ls --color'
 alias mv='mv -i'
-
+alias rm='rm -i'
 alias mkdir='mkdir -p'
 
 # sudo の後のコマンドでエイリアスを有効にする
@@ -160,8 +151,6 @@ elif which putclip >/dev/null 2>&1 ; then
     alias -g C='| putclip'
 fi
 
-
-
 ########################################
 # OS 別の設定
 case ${OSTYPE} in
@@ -177,3 +166,4 @@ esac
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
