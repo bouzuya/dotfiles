@@ -127,6 +127,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 alias c='cd'
 alias g='git'
 alias l='ls --color'
+alias v='vi'
 
 alias be='bundle exec'
 alias ls='ls --color'
