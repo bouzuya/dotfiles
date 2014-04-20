@@ -126,6 +126,7 @@ alias c='cd'
 alias g='git'
 alias l='ls --color'
 
+alias be='bundle exec'
 alias ls='ls --color'
 alias la='ls -a --color'
 alias ll='ls -l --color'
@@ -171,5 +172,5 @@ case ${OSTYPE} in
         ;;
 esac
 
-# vim:set ft=zsh:
-
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
