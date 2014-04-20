@@ -122,6 +122,7 @@ bindkey '^R' history-incremental-pattern-search-backward
 ########################################
 # エイリアス
 
+alias c='cd'
 alias l='ls --color'
 
 alias ls='ls --color'
