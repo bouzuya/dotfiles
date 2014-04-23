@@ -1,10 +1,14 @@
 #!/bin/bash
 
-script_dir=$(cd $(dirname $0); pwd)
-dotfiles_dir=$(dirname $script_dir)
+scripts_dir=$(cd $(dirname $0); pwd)
+dotfiles_dir=$(dirname $scripts_dir)
 
-for f in $(ls $dotfiles_dir -A -I 'scripts' -I 'install.sh' -I '.git' -I '.gitignore' -I '.gitmodules' -I 'README.md')
+for p in ${dotfiles_dir}/*
 do
-  echo $f
+  f=$(basename $p)
+  if [ ! $f = 'README.md' -a ! $f = 'install.sh' -a ! $f = 'scripts' ]
+  then
+    echo $f
+  fi
 done
 
