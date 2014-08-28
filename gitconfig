@@ -1,0 +1,15 @@
+[user]
+	name = bouzuya
+	email = m@bouzuya.net
+
+[alias]
+	a = add
+	d = diff
+	l = log
+	s = status
+	aa = add -A
+	ci = commit
+	co = checkout
+	ds = diff --staged
+	ln = log --name-status
+	lo = log --oneline
