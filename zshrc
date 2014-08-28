@@ -168,3 +168,8 @@ esac
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
+if [ -f ~/.nvm/nvm.sh ]
+then
+  source ~/.nvm/nvm.sh
+fi
+
