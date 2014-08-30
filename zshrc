@@ -175,6 +175,7 @@ then
   eval "$(rbenv init -)"
 fi
 
+# git clone https://github.com/creationix/nvm.git ~/.nvm
 if [ -f ~/.nvm/nvm.sh ]
 then
   source ~/.nvm/nvm.sh
