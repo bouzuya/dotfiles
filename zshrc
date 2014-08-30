@@ -130,6 +130,8 @@ alias ll='ls -l --color'
 alias ls='ls --color'
 alias mv='mv -i'
 alias rm='rm -i'
+alias vi='atom'  # Vi is Atom
+alias vim='atom' # Vim is Atom
 alias mkdir='mkdir -p'
 
 # sudo の後のコマンドでエイリアスを有効にする
