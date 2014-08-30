@@ -167,8 +167,11 @@ case ${OSTYPE} in
         ;;
 esac
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+if [ -d ~/.rbenv ]
+then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
 if [ -f ~/.nvm/nvm.sh ]
 then
