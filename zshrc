@@ -167,6 +167,8 @@ case ${OSTYPE} in
         ;;
 esac
 
+# git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+# git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
 if [ -d ~/.rbenv ]
 then
   export PATH="$HOME/.rbenv/bin:$PATH"
@@ -177,4 +179,3 @@ if [ -f ~/.nvm/nvm.sh ]
 then
   source ~/.nvm/nvm.sh
 fi
-
