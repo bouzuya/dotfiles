@@ -134,6 +134,10 @@ alias vi='atom'  # Vi is Atom
 alias vim='atom' # Vim is Atom
 alias mkdir='mkdir -p'
 
+# editor
+alias vim='atom'
+alias emacs='atom'
+
 # sudo の後のコマンドでエイリアスを有効にする
 alias sudo='sudo '
 
