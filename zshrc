@@ -360,4 +360,4 @@ fi
 [ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
 
 # added by travis gem
-[ -f /home/bouzuya/.travis/travis.sh ] && source /home/bouzuya/.travis/travis.sh
+[ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
