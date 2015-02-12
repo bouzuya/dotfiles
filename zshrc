@@ -361,3 +361,6 @@ if [ -f ~/.nvm/nvm.sh ]
 then
   source ~/.nvm/nvm.sh
 fi
+
+# added by travis gem
+[ -f /home/bouzuya/.travis/travis.sh ] && source /home/bouzuya/.travis/travis.sh
