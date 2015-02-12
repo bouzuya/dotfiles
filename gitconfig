@@ -15,3 +15,4 @@
 	ds = diff --staged
 	ln = log --name-status
 	lo = log --oneline
+	l1 = log --oneline
