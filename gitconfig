@@ -16,3 +16,4 @@
 	ln = log --name-status
 	lo = log --oneline
 	l1 = log --oneline
+	wip = commit --allow-empty -m '[WIP]'
