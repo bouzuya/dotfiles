@@ -19,3 +19,5 @@
 	wip = commit --allow-empty -m '[WIP]'
 [url "git@github.com:bouzuya"]
 	insteadOf = https://github.com/bouzuya
+[push]
+	default = simple
