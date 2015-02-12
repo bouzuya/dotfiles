@@ -357,10 +357,7 @@ then
 fi
 
 # git clone https://github.com/creationix/nvm.git ~/.nvm
-if [ -f ~/.nvm/nvm.sh ]
-then
-  source ~/.nvm/nvm.sh
-fi
+[ -f ~/.nvm/nvm.sh ] && source ~/.nvm/nvm.sh
 
 # added by travis gem
 [ -f /home/bouzuya/.travis/travis.sh ] && source /home/bouzuya/.travis/travis.sh
