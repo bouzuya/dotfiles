@@ -28,6 +28,7 @@ insertBottom = (text) ->
   point = editor.getCursorBufferPosition()
   editor.moveToBottom()
   editor.insertText text
+  editor.insertNewline()
   editor.setCursorBufferPosition point
 
 getGitHubUrls = (text) ->
