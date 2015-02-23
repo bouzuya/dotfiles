@@ -1,6 +1,5 @@
-atom-pane.active atom-text-editor {
-  background-color: #111;
-}
+@import "syntax-variables";
+@import "ui-variables";
 
 .tab-bar {
   display: none;
@@ -11,3 +10,20 @@ status-bar .current-path {
   font-size: 16px;
   font-weight: bold;
 }
+
+atom-pane.active atom-text-editor {
+  background-color: #111;
+}
+
+atom-text-editor.is-focused::shadow .cursors.blink-off .cursor {
+  opacity: 1;
+}
+
+atom-workspace.btom-mode-normal ::shadow .cursors .cursor {
+  background-color: @syntax-cursor-color;
+}
+
+atom-workspace.btom-mode-normal ::shadow .cursor-line {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
