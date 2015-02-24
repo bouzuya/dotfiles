@@ -1,15 +1,19 @@
 activateLeftSidePane = ->
-  getLeftSidePane().activate()
+  pane = getLeftSidePane()
+  pane.activate() if pane?
 
 activateOtherSidePane = ->
-  getOtherSidePane().activate()
+  pane = getOtherSidePane()
+  pane.activate() if pane?
 
 activateRightSidePane = ->
-  getRightSidePane().activate()
+  pane = getRightSidePane()
+  pane.activate() if pane?
 
 getCurrentSide = ->
   leftPane = getLeftSidePane()
   activePane = atom.workspace.getActivePane()
+  # FIXME
   if activePane is leftPane then getLeftSide() else getRightSide()
 
 getCurrentSideItem = ->
@@ -22,16 +26,22 @@ getLeftSide = ->
   'left'
 
 getLeftSideItem = ->
-  getLeftSidePane().getActiveItem()
+  pane = getLeftSidePane()
+  if pane? then pane.getActiveItem() else null
 
 getLeftSidePane = ->
-  atom.workspace.getActivePane().findLeftmostSibling()
+  axis = _rootAxis()
+  return null if axis.orientation isnt 'horizontal'
+  pane = axis.children[0]
+  return pane.children[0] if pane.orientation? # left top
+  pane
 
 getOtherSide = ->
   if getCurrentSide() is getLeftSide() then getRightSide() else getLeftSide()
 
 getOtherSideItem = ->
-  getOtherSidePane().getActiveItem()
+  pane = getOtherSidePane()
+  if pane? then pane.getActiveItem() else null
 
 getOtherSidePane = ->
   if getCurrentSide() is getLeftSide()
@@ -43,10 +53,15 @@ getRightSide = ->
   'right'
 
 getRightSideItem = ->
-  getRightSidePane().getActiveItem()
+  pane = getRightSidePane()
+  if pane? then pane.getActiveItem() else null
 
 getRightSidePane = ->
-  atom.workspace.getActivePane().findOrCreateRightmostSibling()
+  axis = _rootAxis()
+  return null if axis.orientation isnt 'horizontal'
+  pane = axis.children[1]
+  return pane.children[0] if pane.orientation? # right top
+  pane
 
 openCurrentSideItemInLeftSidePane = ->
   uri = getCurrentSideItem().getURI()
@@ -62,6 +77,11 @@ openCurrentSideItemInRightSidePane = ->
   uri = getCurrentSideItem().getURI()
   split = getRightSide()
   atom.workspace.open(uri, split: split, activatePane: false)
+
+_rootAxis = ->
+  axis = atom.workspace.getActivePane()
+  axis = axis.parent while axis.parent.parent?
+  axis
 
 module.exports = {
   activateLeftSidePane
