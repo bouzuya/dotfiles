@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Usage: post-hatena-blog <yyyy-mm-dd>
+# Requirement:
+# - `npm install -g hatena-blog-cli`
+# - `go get github.com/motemen/ghq`
+# - `ghq get bouzuya/blog.bouzuya.net`
+# - `vi ~/profile.d/hatena.sh`
+#   - export HATENA_USERNAME='bouzuya'               # username
+#   - export HATENA_BLOG_ID='bouzuya.hatenablog.com' # blog id
+#   - export HATENA_API_KEY='xxxxxxxxxx'             # api key
+
+date=$1
+year=$(echo ${date} | sed -e 's/\([0-9]*\)-\([0-9]*\)-\([0-9]*\)/\1/g')
+month=$(echo ${date} | sed -e 's/\([0-9]*\)-\([0-9]*\)-\([0-9]*\)/\2/g')
+markdown=$HOME/.ghq/github.com/bouzuya/blog.bouzuya.net/data/${year}/${month}/${date}-diary.md
+
+source $HOME/profile.d/hatena.sh
+
+hatena-blog create --jekyll ${markdown}
