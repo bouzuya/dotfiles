@@ -310,6 +310,7 @@ alias rm='rm -i'
 alias vi='atom'  # Vi is Atom
 alias vim='atom' # Vim is Atom
 alias mkdir='mkdir -p'
+alias cd-ghq='cd $(ghq root)/$(ghq list | peco)'
 
 # editor
 alias vim='atom'
@@ -361,3 +362,11 @@ fi
 
 # added by travis gem
 [ -f ~/.travis/travis.sh ] && source ~/.travis/travis.sh
+
+# go setting
+if [ -x go ]
+then
+  mkdir $HOME/go
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$GOPATH/bin
+fi
